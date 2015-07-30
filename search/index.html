@@ -1,10 +1,10 @@
 
- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>categories | Philo Chou&#39;s Blog</title>
+    <title>search | Philo Chou&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Philo Chou">
@@ -13,13 +13,13 @@
     
     <meta name="description" content="分享技术、产品、前端、运营">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://philochou.github.io/categories/index.html">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://philochou.github.io/search/index.html">
 <meta property="og:site_name" content="Philo Chou's Blog">
 <meta property="og:description" content="分享技术、产品、前端、运营">
-<meta property="og:updated_time" content="2015-07-29T07:32:02.000Z">
+<meta property="og:updated_time" content="2015-07-30T01:06:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="search">
 <meta name="twitter:description" content="分享技术、产品、前端、运营">
 
     
@@ -73,16 +73,7 @@
 </div>
       </header>
       <div id="container">
-          
-<div class="archive-title" >
-<h2 class="category-icon">分类</h2>
-
-</div>
-<div id="main" class="archive-part">
-<div class="all-list-box"></div>
-</div>
-
-
+        
       </div>
       <footer><div id="footer" >
 	
@@ -198,24 +189,6 @@ $(document).ready(function(){
 
 
 
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var list    = $('.archive-title a'),
-      box     = $('.all-list-box'),
-      first   = $('.archive-title a:first-of-type');
-      box.load(first.attr('data-src').toString()+' #archive-page');
-      first.addClass('current');
-  list.each(function(){
-    $(this).click(function(){
-      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
-      box.load(listSrc);
-      list.removeClass('current');
-      $(this).addClass('current');
-     });  
-    });
-  }); 
-</script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
