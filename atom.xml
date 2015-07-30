@@ -5,7 +5,7 @@
   <subtitle><![CDATA[技术、产品、前端、运营]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://philochou.github.io//"/>
-  <updated>2015-07-30T01:09:16.000Z</updated>
+  <updated>2015-07-30T01:09:31.000Z</updated>
   <id>http://philochou.github.io//</id>
   
   <author>
@@ -20,11 +20,15 @@
     <link href="http://philochou.github.io/2015/07/30/github01/"/>
     <id>http://philochou.github.io/2015/07/30/github01/</id>
     <published>2015-07-30T00:39:10.000Z</published>
-    <updated>2015-07-30T01:09:16.000Z</updated>
+    <updated>2015-07-30T01:09:31.000Z</updated>
     <content type="html"></content>
     <summary type="html">
     
     </summary>
+    
+      <category term="git" scheme="http://philochou.github.io/tags/git/"/>
+    
+      <category term="github" scheme="http://philochou.github.io/tags/github/"/>
     
   </entry>
   
