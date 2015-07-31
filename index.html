@@ -74,419 +74,107 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/31/commonmark-preliminaries/" title="《CommonMark规范》预备知识" itemprop="url">《CommonMark规范》预备知识</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Philo Chou" target="_blank" itemprop="author">Philo Chou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-31T04:32:31.000Z" itemprop="datePublished"> 发表于 2015-07-31</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><a id="preliminaries"></a></p>
-<h1>《CommonMark规范》预备知识</h1>
-<p><a id="characters-and-lines"></a></p>
-<h2>字符和行</h2>
-<p>任意数量组合的<a href="#character">字符</a>在CommonMark中都是合法的</p>
-<p><a id="character"></a></p>
-<p><a href="#character">字符</a>：Unicode字符。CommonMark中并不指定字符编码</p>
-<p><a id="line"></a></p>
-<p><a href="#line">行</a>：零个或多个<a href="#character">字符</a>组成的序列，最后以<a href="#line-ending">行尾标识</a>或文件尾结束</p>
-<p><a id="line-ending"></a></p>
-<p><a href="#line-ending">行尾标识</a>：换行符（U+000A）+回车符（U+000D）或回车符+换行符</p>
-<p><a id="blank-line"></a></p>
-<p><a href="#blank-line">空行</a>：一行中不包含任何字符或者仅包含空格或制表符</p>
-<p><a id="whitespace-character"></a></p>
-<p><a href="#whitespace-character">空白符</a>：空格符（U+0020）、制表符（U+0009）、换行符（U+000A）、行制表符（U+000B）、换页符（U+000C）或回车符（U+000D）</p>
-<p><a id="whitespace"></a></p>
-<p><a href="#whitespace">空白区</a>：由<a href="#whitespace-character">空白符</a>组成的序列</p>
-<p><a id="unicode-whitespace-character"></a></p>
-<p><a href="#unicode-whitespace-character">Unicode空白符</a>：包含所有unicode <a href="http://www.fileformat.info/info/unicode/category/Zs/list.htm" target="_blank" rel="external">Zs</a>类中的字符以及制表符（U+0009）、回车符（U+000D）、换行符（U+000A）和换页符（U+000C）</p>
-<p><a id="unicode-whitespace"></a></p>
-<p><a href="#unicode-whitespace">Unicode空白区</a>：由<a href="#unicode-whitespace-character">unicode空白符</a>组成的序列</p>
-<p><a id="space"></a></p>
-<p><a href="#space">空格</a>：U+0020</p>
-<p><a id="non-whitespace-character"></a></p>
-<p><a href="#non-whitespace-character">非空白符</a>：不含在<a href="#whitespace-character">空白符</a>中的所有其他字符</p>
-<p><a id="ascii-punctuation-character"></a></p>
-<p><a href="#ascii-punctuation-character">ASCII标点符</a>：!, &quot;, #, $, %, &amp;, ', (, ), *, +, ,, -, ., /, :, ;, &lt;, =, &gt;, ?, @, [, , ], ^, _, `, {, |, }, ~</p>
-<p><a id="punctuation-character"></a></p>
-<p><a href="#punctuation-character">标点符</a>：包含<a href="#ascii-punctuation-character">ASCII标点符</a>，及unicode中的以下分类：<a href="http://www.fileformat.info/info/unicode/category/Pc/list.htm" target="_blank" rel="external">Pc</a>、<a href="http://www.fileformat.info/info/unicode/category/Pd/list.htm" target="_blank" rel="external">Pd</a>、<a href="http://www.fileformat.info/info/unicode/category/Pe/list.htm" target="_blank" rel="external">Pe</a>、<a href="http://www.fileformat.info/info/unicode/category/Pf/list.htm" target="_blank" rel="external">Pf</a>、<a href="http://www.fileformat.info/info/unicode/category/Pi/list.htm" target="_blank" rel="external">Pi</a>、<a href="http://www.fileformat.info/info/unicode/category/Po/list.htm" target="_blank" rel="external">Po</a>、<a href="http://www.fileformat.info/info/unicode/category/Ps/list.htm" target="_blank" rel="external">Ps</a></p>
-<p><a id="tabs"></a></p>
-<h2>缩进</h2>
-<p><strong>行中的制表符不再替换为空格。</strong></p>
-<p>根据上下文内容，如果缩进对文档结构很重要，制表符会进行处理，使其看起来像是由4个空格组成。</p>
-<blockquote>
-<p>关于制表符的处理，自CommonMark v0.21版本后，Tab不再被替换成4个空格，CommonMark现在直接处理制表符。这样在代码块中的制表符就可以得到保留。详情请查阅<a href="http://spec.commonmark.org/changelog.txt" target="_blank" rel="external">CommonMark v0.21版本更新说明</a>。</p>
-</blockquote>
-<table>
-    <tr>
-        <th>CommonMark</th>
-        <th>HTML</th>
-    </tr>
-    <tr>
-        <td>
-→foo→baz→→bim
-        </td>
-        <td>
-&lt;pre&gt;&lt;code&gt;foo→baz→→bim<br>
-&lt;/code&gt;&lt;/pre&gt;
-        </td>
-    </tr>
-    <tr>
-        <td>
-&nbsp;&nbsp;→foo→baz→→bim
-        </td>
-        <td>
-&lt;pre&gt;&lt;code&gt;foo→baz→→bim<br>
-&lt;/code&gt;&lt;/pre&gt;
-        </td>
-    </tr>
-    <tr>
-        <td>
-&nbsp;&nbsp;&nbsp;&nbsp;a→a<br>
-&nbsp;&nbsp;&nbsp;&nbsp;ὐ→a
-        </td>
-        <td>
-&lt;pre&gt;&lt;code&gt;a→a<br>
-ὐ→a<br>
-&lt;/code&gt;&lt;/pre&gt;<br>
-        </td>
-    </tr>
-    <tr>
-        <td>
-&nbsp;&nbsp;-&nbsp;foo<br>
-<br>
-→bar
-        </td>
-        <td>
-&lt;ul&gt;<br>
-&lt;li&gt;<br>
-&lt;p&gt;foo&lt;/p&gt;<br>
-&lt;p&gt;bar&lt;/p&gt;<br>
-&lt;/li&gt;<br>
-&lt;/ul&gt;
-        </td>
-    </tr>
-    <tr>
-        <td>
->→foo→bar
-        </td>
-        <td>
-&lt;blockquote&gt;<br>
-&lt;p&gt;foo→bar&lt;/p&gt;<br>
-&lt;/blockquote&gt;
-        </td>
-    </tr>
-</table>
-<p><a id="insecure-characters"></a></p>
-<h2>非安全字符</h2>
-<p>处于安全考虑，unicode字符（U+0000）必须用字符（U+FFFD）替换</p>
-<h1><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h1>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/实用工具/">实用工具</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/CommonMark/">CommonMark</a><a href="/tags/Markdown/">Markdown</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/31/commonmark-preliminaries/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/31/commonmark-preliminaries/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/31/commonmark-introduction/" title="《CommonMark规范》介绍" itemprop="url">《CommonMark规范》介绍</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Philo Chou" target="_blank" itemprop="author">Philo Chou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-31T01:23:50.000Z" itemprop="datePublished"> 发表于 2015-07-31</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <div id="intro"></div>
-<h1>《CommonMark规范》介绍</h1>
-<div id="what-is-markdown"></div>
-<h2>Markdown是什么？</h2>
-<p>Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
-<p>它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。</p>
-<p>至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展自Markdown语法并加入了其他的格式约定，比如：脚注、列表、表格等，还有一些实现不仅仅可以输出HTML，还可以输出其他格式，比如：LaTeX。</p>
-<div id="why-is-a-spec-needed"></div>
-<h2>为什么需要建立规范？</h2>
-<p>Bruber对Markdown语法的标准说明中，有些地方表述并不明确。下面是一些例子：</p>
-<p>(整理中……)</p>
-<p>因为缺乏规范，早期的实现者使用Markdown.pl工具解决这个问题，但这个工具不仅有一些Bug，而且在一些情况下会输出错误的结果。</p>
-<p>因为缺乏规范，出现了很多分支版本。导致一个用户在这个系统中书写的文档，到其他系统中就变了样。</p>
-<div id="about-commonmark"></div>
-<h2>关于CommonMark</h2>
-<p>CommonMark主要让Markdown语法更明确。后面有很多例子的演示，这些例子都用Markdown和HTML进行对比说明。
-同时CommonMark还提供了一个测试工具<a href="https://github.com/jgm/CommonMark/blob/master/test/spec_tests.py" target="_blank" rel="external">spec_tests.py</a>对Markdown程序进行测试：</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test/spec_tests.py --spec spec.txt --<span class="function"><span class="keyword">program</span></span> <span class="function"><span class="keyword">PROGRAM</span></span></span><br></pre></td></tr></table></figure>
-<h1><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h1>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/实用工具/">实用工具</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/CommonMark/">CommonMark</a><a href="/tags/Markdown/">Markdown</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/31/commonmark-introduction/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/31/commonmark-introduction/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/07/30/commonmark-catalog/" title="《CommonMark规范》目录" itemprop="url">《CommonMark规范》目录</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Philo Chou" target="_blank" itemprop="author">Philo Chou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-30T13:36:38.000Z" itemprop="datePublished"> 发表于 2015-07-30</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1>《CommonMark规范》目录</h1>
-<p>CommonMark版本：v0.21（2015-07-14)</p>
-<p>后续会根据CommonMark版本一起更新</p>
-<h2><a href="/2015/07/31/commonmark-introduction#intro">介绍</a></h2>
-<h3><a href="/2015/07/31/commonmark-introduction#what-is-markdown">Markdown是什么？</a></h3>
-<h3><a href="/2015/07/31/commonmark-introduction#why-is-a-spec-needed">为什么需要建立规范？</a></h3>
-<h3><a href="/2015/07/31/commonmark-introduction#about-commonmark">关于CommonMark</a></h3>
-<h2><a href="/2015/07/31/commonmark-preliminaries#preliminaries">预备知识</a></h2>
-<h3><a href="/2015/07/31/commonmark-preliminaries#characters-and-lines">字符和行</a></h3>
-<h3><a href="/2015/07/31/commonmark-preliminaries#tabs">缩进</a></h3>
-<h3><a href="/2015/07/31/commonmark-preliminaries#insecure-characters">非安全字符</a></h3>
-<h2>区块和内联</h2>
-<h3>优先级判定</h3>
-<h3>容器区块及非容器区块</h3>
-<h2>非容器区块</h2>
-<h3>水平规则</h3>
-<h3>ATX头</h3>
-<h3>Setext头</h3>
-<h3>缩进代码块(Indented code blocks)</h3>
-<h3>栅栏代码块(Fenced code blocks)</h3>
-<h3>HTML</h3>
-<h3>链接参考定义</h3>
-<h3>段落</h3>
-<h3>空行</h3>
-<h2>容器区块</h2>
-<h3>引用块</h3>
-<h3>列表元素</h3>
-<h4>动机</h4>
-<h3>列表</h3>
-<h2>内联</h2>
-<h3>Backslash escapes</h3>
-<h3>Entities</h3>
-<h3>Code spans</h3>
-<h3>Emphasis and strong emphasis</h3>
-<h3>Links</h3>
-<h3>Images</h3>
-<h3>Autolinks</h3>
-<h3>Raw HTML</h3>
-<h3>Hard line breaks</h3>
-<h3>Soft line breaks</h3>
-<h3>Textual content</h3>
-<h2>附录：解析策略</h2>
-<h3>Overview</h3>
-<h3>Phase 1: block structure</h3>
-<h3>Phase 2: inline structure</h3>
-<h4>An algorithm for parsing nested emphasis and links</h4>
-<h5>look for link or image</h5>
-<h5>process emphasis</h5>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/实用工具/">实用工具</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/07/31/commonmark-preliminaries/" title="《CommonMark规范》预备知识" itemprop="url">
   
-  <span></span> <a href="/tags/CommonMark/">CommonMark</a><a href="/tags/Markdown/">Markdown</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/30/commonmark-catalog/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/30/commonmark-catalog/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">《CommonMark规范》预备知识</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >《CommonMark规范》预备知识
+
+字符和行
+任意数量组合的字符在CommonMark中都是合法的
+
+字符：Unicode字符。CommonMark中并不指定字符编码
+
+行：零个或多个字符组成的序列，最后以行尾标识或文件尾结束
+
+行尾标识：换行符（U+000A）+回车符（U+</p>
+        
     
-      <a href="/2015/07/30/github-catalog/" title="《一起GitHub》目录" itemprop="url">《一起GitHub》目录</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Philo Chou" target="_blank" itemprop="author">Philo Chou</a>
-		
-  <p class="article-time">
-    <time datetime="2015-07-30T12:56:17.000Z" itemprop="datePublished"> 发表于 2015-07-30</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1>目录</h1>
-<ul>
-<li>安装及配置:</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/实用工具/">实用工具</a>
-</div>
+    <time datetime="2015-07-31T04:32:31.000Z" itemprop="datePublished">2015-07-31</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/Git/">Git</a><a href="/tags/GitHub/">GitHub</a><a href="/tags/版本控制/">版本控制</a>
-  </div>
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/07/31/commonmark-introduction/" title="《CommonMark规范》介绍" itemprop="url">
+  
+    <h1 itemprop="name">《CommonMark规范》介绍</h1>
+    
+     
+           <p itemprop="description" >《CommonMark规范》介绍
 
-</div>
+Markdown是什么？
+Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。
+它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Ma</p>
+        
+    
+    <time datetime="2015-07-31T01:23:50.000Z" itemprop="datePublished">2015-07-31</time>
+  </a>
+</section>
 
 
 
 
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/07/30/github-catalog/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/07/30/github-catalog/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
 
 
-    </article>
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/07/30/commonmark-catalog/" title="《CommonMark规范》目录" itemprop="url">
+  
+    <h1 itemprop="name">《CommonMark规范》目录</h1>
+    
+     
+           <p itemprop="description" >《CommonMark规范》目录
+CommonMark版本：v0.21（2015-07-14)
+后续会根据CommonMark版本一起更新
+介绍
+Markdown是什么？
+为什么需要建立规范？
+关于CommonMark
+预备知识
+字符和行
+缩进
+非安全字符
+区块和内联
+优先级判定</p>
+        
+    
+    <time datetime="2015-07-30T13:36:38.000Z" itemprop="datePublished">2015-07-30</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/07/30/github-catalog/" title="《一起GitHub》目录" itemprop="url">
+  
+    <h1 itemprop="name">《一起GitHub》目录</h1>
+    
+     
+           <p itemprop="description" >目录
+
+安装及配置:</p>
+        
+    
+    <time datetime="2015-07-30T12:56:17.000Z" itemprop="datePublished">2015-07-30</time>
+  </a>
+</section>
 
 
 
