@@ -5,7 +5,7 @@
   <subtitle><![CDATA[技术、产品、前端、运营]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://philochou.github.io//"/>
-  <updated>2015-07-31T07:51:13.000Z</updated>
+  <updated>2015-08-01T06:16:09.000Z</updated>
   <id>http://philochou.github.io//</id>
   
   <author>
@@ -16,15 +16,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[《一起GitHub》创建本地版本库]]></title>
+    <link href="http://philochou.github.io/2015/07/31/github-repository/"/>
+    <id>http://philochou.github.io/2015/07/31/github-repository/</id>
+    <published>2015-07-31T09:29:43.000Z</published>
+    <updated>2015-08-01T06:16:09.000Z</updated>
+    <content type="html"><![CDATA[<h2>《一起GitHub》创建本地版本库</h2>
+<h3>本篇目标</h3>
+<p>在本地创建一个新的版本库</p>
+<h3>什么是版本库（Repository）？</h3>
+<p>版本库实际上就是一个项目。这个项目看起来就像你电脑中的文件夹及文件的组织方式。</p>
+<p>Git会跟踪并记录下这个项目中所有的文件夹及文件的改变——即版本控制。</p>
+<h3>创建一个版本库</h3>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>mkdir hello-world</span><br><span class="line"><span class="variable">$ </span>cd hello-world</span><br><span class="line"><span class="variable">$ </span>git init</span><br></pre></td></tr></table></figure>
+<p>至此我们创建了一个叫做<code>hello-world</code>的文件夹，然后进入文件夹中，使用<code>git init</code>初始化了一个版本库</p>
+<p>使用<code>git status</code>可以看到这个版本库的状态，新版本库应该看到下面这个结果：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial <span class="operator"><span class="keyword">commit</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">nothing</span> <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">create</span>/copy files <span class="keyword">and</span> <span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">to</span> track)</span></span><br></pre></td></tr></table></figure>
+<h2><a href="/2015/07/30/github-catalog">返回《一起GitHub》目录</a></h2>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2>《一起GitHub》创建本地版本库</h2>
+<h3>本篇目标</h3>
+<p>在本地创建一个新的版本库</p>
+<h3>什么是版本库（Repository）？</h3>
+<p>版本库实际上就是一个项目。这个项目看起来就像你电脑中的文件夹及文件的组织方式。</p>
+<p>]]>
+    </summary>
+    
+      <category term="Git" scheme="http://philochou.github.io/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://philochou.github.io/tags/GitHub/"/>
+    
+      <category term="版本控制" scheme="http://philochou.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+      <category term="《一起GitHub》" scheme="http://philochou.github.io/categories/%E3%80%8A%E4%B8%80%E8%B5%B7GitHub%E3%80%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[《一起GitHub》Git下载、安装及配置]]></title>
+    <link href="http://philochou.github.io/2015/07/31/github-get-git/"/>
+    <id>http://philochou.github.io/2015/07/31/github-get-git/</id>
+    <published>2015-07-31T08:35:29.000Z</published>
+    <updated>2015-08-01T02:01:31.000Z</updated>
+    <content type="html"><![CDATA[<h2>Git下载、安装及配置</h2>
+<h3>本篇目标</h3>
+<p>安装Git，并配置好使用者的名字和邮箱</p>
+<h3>Git是什么？</h3>
+<p>开源的版本控制软件，作者是Linus Torvalds</p>
+<h3>安装Git</h3>
+<ul>
+<li>Windows：<br>
+下载地址：<a href="https://windows.github.com/" target="_blank" rel="external">https://windows.github.com/</a></li>
+<li>Mac：<br>
+下载地址：<a href="https://mac.github.com/" target="_blank" rel="external">https://mac.github.com/</a></li>
+<li>其他：<br>
+下载地址：<a href="http://git-scm.com/downloads/" target="_blank" rel="external">http://git-scm.com/downloads/</a></li>
+</ul>
+<h3>配置用户名及邮箱</h3>
+<p>打开终端，输入如下命令，检查Git版本</p>
+<p><code>$ git --version</code></p>
+<p>如果安装成功，会出现类似下面的提示：</p>
+<p><code>git version 2.3.2</code></p>
+<p>确保版本在<code>1.7.10</code>以上</p>
+<p>配置Git的本地用户姓名</p>
+<p><code>$ git config --global user.name &quot;用户姓名&quot;</code></p>
+<p>配置Git的本地用户邮箱</p>
+<p><code>$ git config --global user.email &quot;邮箱&quot;</code></p>
+<p>最后，可以使用下面的命令查看所有的Git配置</p>
+<p><code>$ git config --list</code></p>
+<h2><a href="/2015/07/30/github-catalog">返回《一起GitHub》目录</a></h2>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2>Git下载、安装及配置</h2>
+<h3>本篇目标</h3>
+<p>安装Git，并配置好使用者的名字和邮箱</p>
+<h3>Git是什么？</h3>
+<p>开源的版本控制软件，作者是Linus Torvalds</p>
+<h3>安装Git</h3>
+<ul>
+<li>Wi]]>
+    </summary>
+    
+      <category term="Git" scheme="http://philochou.github.io/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://philochou.github.io/tags/GitHub/"/>
+    
+      <category term="版本控制" scheme="http://philochou.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    
+      <category term="《一起GitHub》" scheme="http://philochou.github.io/categories/%E3%80%8A%E4%B8%80%E8%B5%B7GitHub%E3%80%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[《CommonMark规范》预备知识]]></title>
     <link href="http://philochou.github.io/2015/07/31/commonmark-preliminaries/"/>
     <id>http://philochou.github.io/2015/07/31/commonmark-preliminaries/</id>
     <published>2015-07-31T04:32:31.000Z</published>
-    <updated>2015-07-31T07:51:13.000Z</updated>
+    <updated>2015-08-01T01:58:49.000Z</updated>
     <content type="html"><![CDATA[<p><a id="preliminaries"></a></p>
-<h1>《CommonMark规范》预备知识</h1>
+<h2>《CommonMark规范》预备知识</h2>
 <p><a id="characters-and-lines"></a></p>
-<h2>字符和行</h2>
+<h3>字符和行</h3>
 <p>任意数量组合的<a href="#character">字符</a>在CommonMark中都是合法的</p>
 <p><a id="character"></a></p>
 <p><a href="#character">字符</a>：Unicode字符。CommonMark中并不指定字符编码</p>
@@ -51,7 +144,7 @@
 <p><a id="punctuation-character"></a></p>
 <p><a href="#punctuation-character">标点符</a>：包含<a href="#ascii-punctuation-character">ASCII标点符</a>，及unicode中的以下分类：<a href="http://www.fileformat.info/info/unicode/category/Pc/list.htm" target="_blank" rel="external">Pc</a>、<a href="http://www.fileformat.info/info/unicode/category/Pd/list.htm" target="_blank" rel="external">Pd</a>、<a href="http://www.fileformat.info/info/unicode/category/Pe/list.htm" target="_blank" rel="external">Pe</a>、<a href="http://www.fileformat.info/info/unicode/category/Pf/list.htm" target="_blank" rel="external">Pf</a>、<a href="http://www.fileformat.info/info/unicode/category/Pi/list.htm" target="_blank" rel="external">Pi</a>、<a href="http://www.fileformat.info/info/unicode/category/Po/list.htm" target="_blank" rel="external">Po</a>、<a href="http://www.fileformat.info/info/unicode/category/Ps/list.htm" target="_blank" rel="external">Ps</a></p>
 <p><a id="tabs"></a></p>
-<h2>缩进</h2>
+<h3>缩进</h3>
 <p><strong>行中的制表符不再替换为空格。</strong></p>
 <p>根据上下文内容，如果缩进对文档结构很重要，制表符会进行处理，使其看起来像是由4个空格组成。</p>
 <blockquote>
@@ -118,15 +211,15 @@
     </tr>
 </table>
 <p><a id="insecure-characters"></a></p>
-<h2>非安全字符</h2>
+<h3>非安全字符</h3>
 <p>处于安全考虑，unicode字符（U+0000）必须用字符（U+FFFD）替换</p>
-<h1><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h1>
+<h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a id="preliminaries"></a></p>
-<h1>《CommonMark规范》预备知识</h1>
+<h2>《CommonMark规范》预备知识</h2>
 <p><a id="characters-and-lines"></a></p>
-<h2>字符和行</h2>
+<h3>字符和行</h3>
 <p>任意数量组合的<a href="#cha]]>
     </summary>
     
@@ -134,7 +227,7 @@
     
       <category term="Markdown" scheme="http://philochou.github.io/tags/Markdown/"/>
     
-      <category term="实用工具" scheme="http://philochou.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+      <category term="《CommonMark规范》" scheme="http://philochou.github.io/categories/%E3%80%8ACommonMark%E8%A7%84%E8%8C%83%E3%80%8B/"/>
     
   </entry>
   
@@ -143,32 +236,32 @@
     <link href="http://philochou.github.io/2015/07/31/commonmark-introduction/"/>
     <id>http://philochou.github.io/2015/07/31/commonmark-introduction/</id>
     <published>2015-07-31T01:23:50.000Z</published>
-    <updated>2015-07-31T07:10:43.000Z</updated>
+    <updated>2015-08-01T01:58:26.000Z</updated>
     <content type="html"><![CDATA[<div id="intro"></div>
-<h1>《CommonMark规范》介绍</h1>
+<h2>《CommonMark规范》介绍</h2>
 <div id="what-is-markdown"></div>
-<h2>Markdown是什么？</h2>
+<h3>Markdown是什么？</h3>
 <p>Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
 <p>它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。</p>
 <p>至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展自Markdown语法并加入了其他的格式约定，比如：脚注、列表、表格等，还有一些实现不仅仅可以输出HTML，还可以输出其他格式，比如：LaTeX。</p>
 <div id="why-is-a-spec-needed"></div>
-<h2>为什么需要建立规范？</h2>
+<h3>为什么需要建立规范？</h3>
 <p>Bruber对Markdown语法的标准说明中，有些地方表述并不明确。下面是一些例子：</p>
 <p>(整理中……)</p>
 <p>因为缺乏规范，早期的实现者使用Markdown.pl工具解决这个问题，但这个工具不仅有一些Bug，而且在一些情况下会输出错误的结果。</p>
 <p>因为缺乏规范，出现了很多分支版本。导致一个用户在这个系统中书写的文档，到其他系统中就变了样。</p>
 <div id="about-commonmark"></div>
-<h2>关于CommonMark</h2>
+<h3>关于CommonMark</h3>
 <p>CommonMark主要让Markdown语法更明确。后面有很多例子的演示，这些例子都用Markdown和HTML进行对比说明。
 同时CommonMark还提供了一个测试工具<a href="https://github.com/jgm/CommonMark/blob/master/test/spec_tests.py" target="_blank" rel="external">spec_tests.py</a>对Markdown程序进行测试：</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test/spec_tests.py --spec spec.txt --<span class="function"><span class="keyword">program</span></span> <span class="function"><span class="keyword">PROGRAM</span></span></span><br></pre></td></tr></table></figure>
-<h1><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h1>
+<h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
 ]]></content>
     <summary type="html">
     <![CDATA[<div id="intro"></div>
-<h1>《CommonMark规范》介绍</h1>
+<h2>《CommonMark规范》介绍</h2>
 <div id="what-is-markdown"></div>
-<h2>Markdown是什么？</h2>
+<h3>Markdown是什么？</h3>
 <p>Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多]]>
     </summary>
     
@@ -176,7 +269,7 @@
     
       <category term="Markdown" scheme="http://philochou.github.io/tags/Markdown/"/>
     
-      <category term="实用工具" scheme="http://philochou.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+      <category term="《CommonMark规范》" scheme="http://philochou.github.io/categories/%E3%80%8ACommonMark%E8%A7%84%E8%8C%83%E3%80%8B/"/>
     
   </entry>
   
@@ -185,68 +278,68 @@
     <link href="http://philochou.github.io/2015/07/30/commonmark-catalog/"/>
     <id>http://philochou.github.io/2015/07/30/commonmark-catalog/</id>
     <published>2015-07-30T13:36:38.000Z</published>
-    <updated>2015-07-31T07:50:37.000Z</updated>
-    <content type="html"><![CDATA[<h1>《CommonMark规范》目录</h1>
+    <updated>2015-08-01T01:58:10.000Z</updated>
+    <content type="html"><![CDATA[<h2>《CommonMark规范》目录</h2>
 <p>CommonMark版本：v0.21（2015-07-14)</p>
 <p>后续会根据CommonMark版本一起更新</p>
-<h2><a href="/2015/07/31/commonmark-introduction#intro">介绍</a></h2>
-<h3><a href="/2015/07/31/commonmark-introduction#what-is-markdown">Markdown是什么？</a></h3>
-<h3><a href="/2015/07/31/commonmark-introduction#why-is-a-spec-needed">为什么需要建立规范？</a></h3>
-<h3><a href="/2015/07/31/commonmark-introduction#about-commonmark">关于CommonMark</a></h3>
-<h2><a href="/2015/07/31/commonmark-preliminaries#preliminaries">预备知识</a></h2>
-<h3><a href="/2015/07/31/commonmark-preliminaries#characters-and-lines">字符和行</a></h3>
-<h3><a href="/2015/07/31/commonmark-preliminaries#tabs">缩进</a></h3>
-<h3><a href="/2015/07/31/commonmark-preliminaries#insecure-characters">非安全字符</a></h3>
-<h2>区块和内联</h2>
-<h3>优先级判定</h3>
-<h3>容器区块及非容器区块</h3>
-<h2>非容器区块</h2>
-<h3>水平规则</h3>
-<h3>ATX头</h3>
-<h3>Setext头</h3>
-<h3>缩进代码块(Indented code blocks)</h3>
-<h3>栅栏代码块(Fenced code blocks)</h3>
-<h3>HTML</h3>
-<h3>链接参考定义</h3>
-<h3>段落</h3>
-<h3>空行</h3>
-<h2>容器区块</h2>
-<h3>引用块</h3>
-<h3>列表元素</h3>
-<h4>动机</h4>
-<h3>列表</h3>
-<h2>内联</h2>
-<h3>Backslash escapes</h3>
-<h3>Entities</h3>
-<h3>Code spans</h3>
-<h3>Emphasis and strong emphasis</h3>
-<h3>Links</h3>
-<h3>Images</h3>
-<h3>Autolinks</h3>
-<h3>Raw HTML</h3>
-<h3>Hard line breaks</h3>
-<h3>Soft line breaks</h3>
-<h3>Textual content</h3>
-<h2>附录：解析策略</h2>
-<h3>Overview</h3>
-<h3>Phase 1: block structure</h3>
-<h3>Phase 2: inline structure</h3>
-<h4>An algorithm for parsing nested emphasis and links</h4>
-<h5>look for link or image</h5>
-<h5>process emphasis</h5>
+<h3><a href="/2015/07/31/commonmark-introduction#intro">介绍</a></h3>
+<h4><a href="/2015/07/31/commonmark-introduction#what-is-markdown">Markdown是什么？</a></h4>
+<h4><a href="/2015/07/31/commonmark-introduction#why-is-a-spec-needed">为什么需要建立规范？</a></h4>
+<h4><a href="/2015/07/31/commonmark-introduction#about-commonmark">关于CommonMark</a></h4>
+<h3><a href="/2015/07/31/commonmark-preliminaries#preliminaries">预备知识</a></h3>
+<h4><a href="/2015/07/31/commonmark-preliminaries#characters-and-lines">字符和行</a></h4>
+<h4><a href="/2015/07/31/commonmark-preliminaries#tabs">缩进</a></h4>
+<h4><a href="/2015/07/31/commonmark-preliminaries#insecure-characters">非安全字符</a></h4>
+<h3>区块和内联</h3>
+<h4>优先级判定</h4>
+<h4>容器区块及非容器区块</h4>
+<h3>非容器区块</h3>
+<h4>水平规则</h4>
+<h4>ATX头</h4>
+<h4>Setext头</h4>
+<h4>缩进代码块(Indented code blocks)</h4>
+<h4>栅栏代码块(Fenced code blocks)</h4>
+<h4>HTML</h4>
+<h4>链接参考定义</h4>
+<h4>段落</h4>
+<h4>空行</h4>
+<h3>容器区块</h3>
+<h4>引用块</h4>
+<h4>列表元素</h4>
+<h5>动机</h5>
+<h4>列表</h4>
+<h3>内联</h3>
+<h4>Backslash escapes</h4>
+<h4>Entities</h4>
+<h4>Code spans</h4>
+<h4>Emphasis and strong emphasis</h4>
+<h4>Links</h4>
+<h4>Images</h4>
+<h4>Autolinks</h4>
+<h4>Raw HTML</h4>
+<h4>Hard line breaks</h4>
+<h4>Soft line breaks</h4>
+<h4>Textual content</h4>
+<h3>附录：解析策略</h3>
+<h4>Overview</h4>
+<h4>Phase 1: block structure</h4>
+<h4>Phase 2: inline structure</h4>
+<h5>An algorithm for parsing nested emphasis and links</h5>
+<h6>look for link or image</h6>
+<h6>process emphasis</h6>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1>《CommonMark规范》目录</h1>
+    <![CDATA[<h2>《CommonMark规范》目录</h2>
 <p>CommonMark版本：v0.21（2015-07-14)</p>
 <p>后续会根据CommonMark版本一起更新</p>
-<h2><a href="/2015/07/31/commonmark-introductio]]>
+<h3><a href="/2015/07/31/commonmark-introductio]]>
     </summary>
     
       <category term="CommonMark" scheme="http://philochou.github.io/tags/CommonMark/"/>
     
       <category term="Markdown" scheme="http://philochou.github.io/tags/Markdown/"/>
     
-      <category term="实用工具" scheme="http://philochou.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+      <category term="《CommonMark规范》" scheme="http://philochou.github.io/categories/%E3%80%8ACommonMark%E8%A7%84%E8%8C%83%E3%80%8B/"/>
     
   </entry>
   
@@ -255,18 +348,15 @@
     <link href="http://philochou.github.io/2015/07/30/github-catalog/"/>
     <id>http://philochou.github.io/2015/07/30/github-catalog/</id>
     <published>2015-07-30T12:56:17.000Z</published>
-    <updated>2015-07-30T13:34:14.000Z</updated>
-    <content type="html"><![CDATA[<h1>目录</h1>
-<ul>
-<li>安装及配置:</li>
-</ul>
+    <updated>2015-08-01T01:58:54.000Z</updated>
+    <content type="html"><![CDATA[<h2>《一起GitHub》目录</h2>
+<h3><a href="/2015/07/31/github-get-git">Git下载、安装及配置</a></h3>
+<h3><a href="/2015/07/31/github-repository">创建本地版本库</a></h3>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1>目录</h1>
-<ul>
-<li>安装及配置:</li>
-</ul>
-]]>
+    <![CDATA[<h2>《一起GitHub》目录</h2>
+<h3><a href="/2015/07/31/github-get-git">Git下载、安装及配置</a></h3>
+<h3><a href="/2015/07/31/github-repository">创建本地版本库</a><]]>
     </summary>
     
       <category term="Git" scheme="http://philochou.github.io/tags/Git/"/>
@@ -275,7 +365,7 @@
     
       <category term="版本控制" scheme="http://philochou.github.io/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
     
-      <category term="实用工具" scheme="http://philochou.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+      <category term="《一起GitHub》" scheme="http://philochou.github.io/categories/%E3%80%8A%E4%B8%80%E8%B5%B7GitHub%E3%80%8B/"/>
     
   </entry>
   
