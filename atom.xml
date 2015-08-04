@@ -313,7 +313,7 @@
     <link href="http://philochou.github.io/2015/07/30/commonmark-catalog/"/>
     <id>http://philochou.github.io/2015/07/30/commonmark-catalog/</id>
     <published>2015-07-30T13:36:38.000Z</published>
-    <updated>2015-08-04T10:39:25.000Z</updated>
+    <updated>2015-08-04T10:45:45.000Z</updated>
     <content type="html"><![CDATA[<h2>《CommonMark规范》目录</h2>
 <p>CommonMark版本：v0.21（2015-07-14)</p>
 <p>后续会根据CommonMark版本一起更新</p>
@@ -328,7 +328,7 @@
 <h3>3. <a href="/2015/08/04/commonmark-blocks-and-inlines">块(Blocks)和内联(Inlines)</a></h3>
 <h4>3.1 <a href="/2015/08/04/commonmark-blocks-and-inlines#precedence">优先级</a></h4>
 <h4>3.2 <a href="/2015/08/04/commonmark-blocks-and-inlines#container-blocks-and-leaf-blocks">容器块、叶块</a></h4>
-<h3>4. 非容器块</h3>
+<h3>4. 叶块</h3>
 <h4>4.1 水平规则</h4>
 <h4>4.2 ATX头</h4>
 <h4>4.3 Setext头</h4>
@@ -338,7 +338,7 @@
 <h4>4.7 链接参考定义</h4>
 <h4>4.8 段落</h4>
 <h4>4.9 空行</h4>
-<h3>5. 容器区块</h3>
+<h3>5. 容器块</h3>
 <h4>5.1 引用块</h4>
 <h4>5.2 列表元素</h4>
 <h5>5.2.1 动机</h5>
