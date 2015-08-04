@@ -5,7 +5,7 @@
   <subtitle><![CDATA[技术、产品、前端、运营]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://philochou.github.io//"/>
-  <updated>2015-08-04T10:37:46.000Z</updated>
+  <updated>2015-08-04T10:39:54.000Z</updated>
   <id>http://philochou.github.io//</id>
   
   <author>
@@ -20,8 +20,8 @@
     <link href="http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/"/>
     <id>http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/</id>
     <published>2015-08-04T09:36:51.000Z</published>
-    <updated>2015-08-04T10:37:46.000Z</updated>
-    <content type="html"><![CDATA[<h2>《CommonMark规范》块和内联</h2>
+    <updated>2015-08-04T10:39:54.000Z</updated>
+    <content type="html"><![CDATA[<h2>《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
 <p>我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等<strong>块级元素</strong>构件起来的。
 块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等<strong>内联元素</strong>。</p>
 <p><a id="precedence"></a></p>
@@ -37,9 +37,9 @@
 <h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2>《CommonMark规范》块和内联</h2>
+    <![CDATA[<h2>《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
 <p>我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等<strong>块级元素</strong>构件起来的。
-块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片]]>
+块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等）]]>
     </summary>
     
       <category term="CommonMark" scheme="http://philochou.github.io/tags/CommonMark/"/>
@@ -313,7 +313,7 @@
     <link href="http://philochou.github.io/2015/07/30/commonmark-catalog/"/>
     <id>http://philochou.github.io/2015/07/30/commonmark-catalog/</id>
     <published>2015-07-30T13:36:38.000Z</published>
-    <updated>2015-08-04T10:37:45.000Z</updated>
+    <updated>2015-08-04T10:39:25.000Z</updated>
     <content type="html"><![CDATA[<h2>《CommonMark规范》目录</h2>
 <p>CommonMark版本：v0.21（2015-07-14)</p>
 <p>后续会根据CommonMark版本一起更新</p>
@@ -325,7 +325,7 @@
 <h4>2.1 <a href="/2015/07/31/commonmark-preliminaries#characters-and-lines">字符和行</a></h4>
 <h4>2.2 <a href="/2015/07/31/commonmark-preliminaries#tabs">缩进</a></h4>
 <h4>2.3 <a href="/2015/07/31/commonmark-preliminaries#insecure-characters">非安全字符</a></h4>
-<h3>3. <a href="/2015/08/04/commonmark-blocks-and-inlines">块和内联</a></h3>
+<h3>3. <a href="/2015/08/04/commonmark-blocks-and-inlines">块(Blocks)和内联(Inlines)</a></h3>
 <h4>3.1 <a href="/2015/08/04/commonmark-blocks-and-inlines#precedence">优先级</a></h4>
 <h4>3.2 <a href="/2015/08/04/commonmark-blocks-and-inlines#container-blocks-and-leaf-blocks">容器块、叶块</a></h4>
 <h3>4. 非容器块</h3>
