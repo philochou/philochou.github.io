@@ -4,29 +4,44 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>《一起GitHub》目录 | Philo的技术博客</title>
+    <title>《CommonMark规范》块和内联 | Philo的技术博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Philo Chou">
     
 
     
-    <meta name="description" content="《一起GitHub》目录
-1. Git下载、安装及配置
-2. 创建本地版本库">
+    <meta name="description" content="《CommonMark规范》块和内联
+我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等块级元素构件起来的。
+块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等内联元素。
+
+优先级
+块级结构标识总是优先于内联结构标识进行处理。比如：
+12- `one- two`
+表示的是一个列表中包含`one和two`两个元素，生成HTML后是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《一起GitHub》目录">
-<meta property="og:url" content="http://philochou.github.io/2015/07/30/github-catalog/index.html">
+<meta property="og:title" content="《CommonMark规范》块和内联">
+<meta property="og:url" content="http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/index.html">
 <meta property="og:site_name" content="Philo的技术博客">
-<meta property="og:description" content="《一起GitHub》目录
-1. Git下载、安装及配置
-2. 创建本地版本库">
-<meta property="og:updated_time" content="2015-08-04T06:56:24.000Z">
+<meta property="og:description" content="《CommonMark规范》块和内联
+我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等块级元素构件起来的。
+块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等内联元素。
+
+优先级
+块级结构标识总是优先于内联结构标识进行处理。比如：
+12- `one- two`
+表示的是一个列表中包含`one和two`两个元素，生成HTML后是">
+<meta property="og:updated_time" content="2015-08-04T10:37:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《一起GitHub》目录">
-<meta name="twitter:description" content="《一起GitHub》目录
-1. Git下载、安装及配置
-2. 创建本地版本库">
+<meta name="twitter:title" content="《CommonMark规范》块和内联">
+<meta name="twitter:description" content="《CommonMark规范》块和内联
+我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等块级元素构件起来的。
+块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等内联元素。
+
+优先级
+块级结构标识总是优先于内联结构标识进行处理。比如：
+12- `one- two`
+表示的是一个列表中包含`one和two`两个元素，生成HTML后是">
 
     
     <link rel="alternative" href="/atom.xml" title="Philo的技术博客" type="application/atom+xml">
@@ -85,22 +100,33 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/07/30/github-catalog/" title="《一起GitHub》目录" itemprop="url">《一起GitHub》目录</a>
+      <a href="/2015/08/04/commonmark-blocks-and-inlines/" title="《CommonMark规范》块和内联" itemprop="url">《CommonMark规范》块和内联</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Philo Chou" target="_blank" itemprop="author">Philo Chou</a>
 		
   <p class="article-time">
-    <time datetime="2015-07-30T12:56:17.000Z" itemprop="datePublished"> 发表于 2015-07-30</time>
+    <time datetime="2015-08-04T09:36:51.000Z" itemprop="datePublished"> 发表于 2015-08-04</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h2>《一起GitHub》目录</h2>
-<h3>1. <a href="/2015/07/31/github-get-git">Git下载、安装及配置</a></h3>
-<h3>2. <a href="/2015/07/31/github-repository">创建本地版本库</a></h3>
+		<h2>《CommonMark规范》块和内联</h2>
+<p>我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等<strong>块级元素</strong>构件起来的。
+块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等<strong>内联元素</strong>。</p>
+<p><a id="precedence"></a></p>
+<h3>优先级</h3>
+<p>块级结构标识总是优先于内联结构标识进行处理。比如：</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> <span class="string">`one</span><br><span class="line"></span></span>-<span class="ruby"><span class="string"> two`</span></span></span><br></pre></td></tr></table></figure>
+<p>表示的是一个列表中包含<code>`one</code>和<code>two`</code>两个元素，生成HTML后是：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>`one<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>two`<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>而不是一个包含了代码段的列表</p>
+<p><a id="container-blocks-and-leaf-blocks"></a></p>
+<h3>容器块、叶块</h3>
+<p>块分为“容器块”和“叶块”，其中“容器块”可以包含其他块，而“叶块”不能包含其他块。后面会进行详细说明。</p>
+<h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -108,13 +134,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/《一起GitHub》/">《一起GitHub》</a>
+  <a class="article-category-link" href="/categories/《CommonMark规范》/">《CommonMark规范》</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Git/">Git</a><a href="/tags/GitHub/">GitHub</a><a href="/tags/版本控制/">版本控制</a>
+  <span></span> <a href="/tags/CommonMark/">CommonMark</a><a href="/tags/Markdown/">Markdown</a>
   </div>
 
 </div>
@@ -123,7 +149,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://philochou.github.io/2015/07/30/github-catalog/" data-title="《一起GitHub》目录 | Philo的技术博客" data-tsina="philochou" class="share clearfix">
+	  <div data-url="http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/" data-title="《CommonMark规范》块和内联 | Philo的技术博客" data-tsina="philochou" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,20 +162,20 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/07/30/commonmark-catalog/" title="《CommonMark规范》目录">
-  <strong>上一篇：</strong><br/>
-  <span>
-  《CommonMark规范》目录</span>
+
+<div class="next">
+<a href="/2015/07/31/github-repository/"  title="《一起GitHub》创建本地版本库">
+ <strong>下一篇：</strong><br/> 
+ <span>《一起GitHub》创建本地版本库
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/07/30/github-catalog/" data-title="《一起GitHub》目录" data-url="http://philochou.github.io/2015/07/30/github-catalog/"></div>
+	<div class="ds-thread" data-thread-key="2015/08/04/commonmark-blocks-and-inlines/" data-title="《CommonMark规范》块和内联" data-url="http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/"></div>
 </section>
 
 
@@ -159,7 +185,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">《一起GitHub》目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1. Git下载、安装及配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2. 创建本地版本库</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">《CommonMark规范》块和内联</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">容器块、叶块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">返回《CommonMark规范》目录</span></a></li></ol>
  
   </div>
 
