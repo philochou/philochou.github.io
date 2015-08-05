@@ -5,7 +5,7 @@
   <subtitle><![CDATA[技术、产品、前端、运营]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://philochou.github.io//"/>
-  <updated>2015-08-04T10:39:54.000Z</updated>
+  <updated>2015-08-05T01:36:37.000Z</updated>
   <id>http://philochou.github.io//</id>
   
   <author>
@@ -14,6 +14,136 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[《CommonMark规范》叶块]]></title>
+    <link href="http://philochou.github.io/2015/08/05/commonmark-leaf-blocks/"/>
+    <id>http://philochou.github.io/2015/08/05/commonmark-leaf-blocks/</id>
+    <published>2015-08-05T00:42:13.000Z</published>
+    <updated>2015-08-05T01:36:37.000Z</updated>
+    <content type="html"><![CDATA[<h2>4. 《CommonMark规范》叶块</h2>
+<h3>4.1 水平线</h3>
+<p>以0-3个空格开头，后面接3个或更多的&quot;-&quot;, &quot;_&quot;, &quot;*&quot;，这几个字符后面可添加任意数量的空格。</p>
+<style>
+    .o{
+        color:green;
+    }
+    .x{
+        color:red;
+    }
+</style>
+<table>
+    <tr>
+        <th>CommonMark</th>
+        <th>HTML</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td>***<br>---<br>___</td>
+        <td>&lt;hr /&gt;<br>&lt;hr /&gt;<br>&lt;hr /&gt;</td>
+        <td class="o">正确</td>
+    </tr>
+    <tr>
+        <td>&nbsp;***<br>&nbsp;&nbsp;---<br>&nbsp;&nbsp;&nbsp;___</td>
+        <td>&lt;hr /&gt;<br>&lt;hr /&gt;<br>&lt;hr /&gt;</td>
+        <td class="o">前面0-3个空格是允许的</td>
+    </tr>
+    <tr>
+        <td>__________</td>
+        <td>&lt;hr /&gt;</td>
+        <td class="o">3个以上的水平线符号是允许的</td>
+    </tr>
+    <tr>
+        <td> - - -<br>-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+        <td>&lt;hr /&gt;<br>&lt;hr /&gt;</td>
+        <td class="o">水平线符号中间有空格是允许的</td>
+    </tr>
+    <tr>
+        <td>- - -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>&lt;hr /&gt;</td>
+        <td class="o">最后加多个空格是允许的</td>
+    </tr>
+    <tr>
+        <td>- foo<br>***<br>- bar</td>
+        <td>&lt;ul&gt;<br>&lt;li&gt;foo&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;hr /&gt;<br>&lt;ul&gt;<br>&lt;li&gt;bar&lt;/li&gt;<br>&lt;/ul&gt;</td>
+        <td class="o">水平线前后可以不需要空行来分割</td>
+    </tr>
+    <tr>
+        <td>Foo<br>***<br>bar</td>
+        <td>&lt;p&gt;Foo&lt;/p&gt;<br>&lt;hr /&gt;<br>&lt;p&gt;bar&lt;/p&gt;</td>
+        <td class="o">水平线可以用来分割段落，<em>但如果是"-"则会优先处理成标题，详细见<a href="#setext-headers">Setext headers</a></em></td>
+    </tr>
+    <tr>
+        <td>* Foo<br>* * *<br>* Bar</td>
+        <td>&lt;ul&gt;<br>&lt;li&gt;Foo&lt;/li&gt;<br>&lt;/ul&gt;<br>&lt;hr /&gt;<br>&lt;ul&gt;<br>&lt;li&gt;Bar&lt;/li&gt;<br>&lt;/ul&gt;</td>
+        <td class="o">当并列出现列表和水平线时，优先处理水平线</td>
+    </tr>
+    <tr>
+        <td>- Foo<br>- * * *</td>
+        <td>&lt;ul&gt;<br>&lt;li&gt;Foo&lt;/li&gt;<br>&lt;li&gt;<br>&lt;hr /&gt;<br>&lt;/li&gt;<br>&lt;/ul&gt;</td>
+        <td class="o">如果要在列表中加入水平线，请使用与列表标识符不一样的符号</td>
+    </tr>
+    <tr>
+        <td>+++</td>
+        <td>&lt;p&gt;+++&lt;/p&gt;</td>
+        <td class="x">错误的字符</td>
+    </tr>
+    <tr>
+        <td>===</td>
+        <td>&lt;p&gt;===&lt;/p&gt;</td>
+        <td class="x">错误的字符</td>
+    </tr>
+    <tr>
+        <td>**<br>--<br>__</td>
+        <td>&lt;p&gt;--<br>**<br>__&lt;/p&gt;</td>
+        <td class="x">字符不够</td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;****</td>
+        <td>&lt;pre&gt;&lt;code&gt;***<br>&lt;/code&gt;&lt;/pre&gt;</td>
+        <td class="x">前面有4个空格，数量太多</td>
+    </tr>
+    <tr>
+        <td>Foo<br>&nbsp;&nbsp;&nbsp;&nbsp;****</td>
+        <td>&lt;p&gt;Foo<br>***&lt;/p&gt;</td>
+        <td class="x">前面有4个空格，数量太多</td>
+    </tr>
+    <tr>
+        <td>_ _ _ a<br>a-----<br>---a---</td>
+        <td>&lt;p&gt;_ _ _ a&lt;/p&gt;<br>&lt;p&gt;a-----&lt;/p&gt;<br>&lt;p&gt;---a---&lt;/p&gt;</td>
+        <td class="x">不允许出现其他字符</td>
+    </tr>
+    <tr>
+        <td>*-*</td>
+        <td>&lt;p&gt;&lt;em&gt;-&lt;/em&gt;&lt;/p&gt;</td>
+        <td class="x">字符必须相同</td>
+    </tr>
+</table>
+<h3>4.2 ATX headers</h3>
+<p><a id="setext-headers"></a></p>
+<h3>4.3 Setext headers</h3>
+<h3>4.4 Indented code blocks</h3>
+<h3>4.5 Fenced code blocks</h3>
+<h3>4.6 HTML blocks</h3>
+<h3>4.7 Link reference definitions</h3>
+<h3>4.8 Paragraphs</h3>
+<h3>4.9 Blank lines</h3>
+<h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2>4. 《CommonMark规范》叶块</h2>
+<h3>4.1 水平线</h3>
+<p>以0-3个空格开头，后面接3个或更多的&quot;-&quot;, &quot;_&quot;, &quot;*&quot;，这几个字符后面可添加任意数量的空格。</p>
+<styl]]>
+    </summary>
+    
+      <category term="CommonMark" scheme="http://philochou.github.io/tags/CommonMark/"/>
+    
+      <category term="Markdown" scheme="http://philochou.github.io/tags/Markdown/"/>
+    
+      <category term="《CommonMark规范》" scheme="http://philochou.github.io/categories/%E3%80%8ACommonMark%E8%A7%84%E8%8C%83%E3%80%8B/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[《CommonMark规范》块和内联]]></title>
@@ -313,7 +443,7 @@
     <link href="http://philochou.github.io/2015/07/30/commonmark-catalog/"/>
     <id>http://philochou.github.io/2015/07/30/commonmark-catalog/</id>
     <published>2015-07-30T13:36:38.000Z</published>
-    <updated>2015-08-05T00:38:43.000Z</updated>
+    <updated>2015-08-05T00:43:23.000Z</updated>
     <content type="html"><![CDATA[<h2>前言</h2>
 <p>这只是博主学习《CommonMark规范》的笔记，仅供参考。</p>
 <h2>《CommonMark规范》目录</h2>
@@ -330,7 +460,7 @@
 <h3>3. <a href="/2015/08/04/commonmark-blocks-and-inlines">块(Blocks)和内联(Inlines)</a></h3>
 <h4>3.1 <a href="/2015/08/04/commonmark-blocks-and-inlines#precedence">优先级</a></h4>
 <h4>3.2 <a href="/2015/08/04/commonmark-blocks-and-inlines#container-blocks-and-leaf-blocks">容器块、叶块</a></h4>
-<h3>4. 叶块</h3>
+<h3>4. <a href="/2015/08/05/commonmark-leaf-blocks">叶块</a></h3>
 <h4>4.1 水平规则</h4>
 <h4>4.2 ATX头</h4>
 <h4>4.3 Setext头</h4>
