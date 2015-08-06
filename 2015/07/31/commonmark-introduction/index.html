@@ -11,31 +11,31 @@
     
 
     
-    <meta name="description" content="《CommonMark规范》介绍
+    <meta name="description" content="1. 《CommonMark规范》介绍
 
-Markdown是什么？
+1.1 Markdown是什么？
 Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。
 它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。
-至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展">
+至2014年，互联网已经有各种不同编程语言实现的版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《CommonMark规范》介绍">
 <meta property="og:url" content="http://philochou.github.io/2015/07/31/commonmark-introduction/index.html">
 <meta property="og:site_name" content="Philo的技术博客">
-<meta property="og:description" content="《CommonMark规范》介绍
+<meta property="og:description" content="1. 《CommonMark规范》介绍
 
-Markdown是什么？
+1.1 Markdown是什么？
 Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。
 它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。
-至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展">
-<meta property="og:updated_time" content="2015-08-04T10:36:39.000Z">
+至2014年，互联网已经有各种不同编程语言实现的版本">
+<meta property="og:updated_time" content="2015-08-06T02:07:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CommonMark规范》介绍">
-<meta name="twitter:description" content="《CommonMark规范》介绍
+<meta name="twitter:description" content="1. 《CommonMark规范》介绍
 
-Markdown是什么？
+1.1 Markdown是什么？
 Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。
 它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。
-至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展">
+至2014年，互联网已经有各种不同编程语言实现的版本">
 
     
     <link rel="alternative" href="/atom.xml" title="Philo的技术博客" type="application/atom+xml">
@@ -108,20 +108,20 @@ Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多
 	<div class="article-content">
 		
 		<p><a id="intro"></a></p>
-<h2>《CommonMark规范》介绍</h2>
+<h2>1. 《CommonMark规范》介绍</h2>
 <p><a id="what-is-markdown"></a></p>
-<h3>Markdown是什么？</h3>
+<h3>1.1 Markdown是什么？</h3>
 <p>Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
 <p>它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。</p>
 <p>至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展自Markdown语法并加入了其他的格式约定，比如：脚注、列表、表格等，还有一些实现不仅仅可以输出HTML，还可以输出其他格式，比如：LaTeX。</p>
 <p><a id="why-is-a-spec-needed"></a></p>
-<h3>为什么需要建立规范？</h3>
+<h3>1.2 为什么需要建立规范？</h3>
 <p>Bruber对Markdown语法的标准说明中，有些地方表述并不明确。下面是一些例子：</p>
 <p>(整理中……)</p>
 <p>因为缺乏规范，早期的实现者使用Markdown.pl工具解决这个问题，但这个工具不仅有一些Bug，而且在一些情况下会输出错误的结果。</p>
 <p>因为缺乏规范，出现了很多分支版本。导致一个用户在这个系统中书写的文档，到其他系统中就变了样。</p>
 <p><a id="about-commonmark"></a></p>
-<h3>关于CommonMark</h3>
+<h3>1.3 关于CommonMark</h3>
 <p>CommonMark主要让Markdown语法更明确。后面有很多例子的演示，这些例子都用Markdown和HTML进行对比说明。
 同时CommonMark还提供了一个测试工具<a href="https://github.com/jgm/CommonMark/blob/master/test/spec_tests.py" target="_blank" rel="external">spec_tests.py</a>对Markdown程序进行测试：</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test/spec_tests.py --spec spec.txt --<span class="function"><span class="keyword">program</span></span> <span class="function"><span class="keyword">PROGRAM</span></span></span><br></pre></td></tr></table></figure>
@@ -192,7 +192,7 @@ Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">《CommonMark规范》介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">Markdown是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">为什么需要建立规范？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">关于CommonMark</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">返回《CommonMark规范》目录</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">1. 《CommonMark规范》介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 Markdown是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 为什么需要建立规范？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 关于CommonMark</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">返回《CommonMark规范》目录</span></a></li></ol>
  
   </div>
 

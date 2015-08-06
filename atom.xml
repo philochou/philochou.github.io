@@ -5,7 +5,7 @@
   <subtitle><![CDATA[技术、产品、前端、运营]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://philochou.github.io//"/>
-  <updated>2015-08-05T01:39:24.000Z</updated>
+  <updated>2015-08-06T03:11:22.000Z</updated>
   <id>http://philochou.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://philochou.github.io/2015/08/05/commonmark-leaf-blocks/"/>
     <id>http://philochou.github.io/2015/08/05/commonmark-leaf-blocks/</id>
     <published>2015-08-05T00:42:13.000Z</published>
-    <updated>2015-08-05T01:39:24.000Z</updated>
+    <updated>2015-08-06T03:11:22.000Z</updated>
     <content type="html"><![CDATA[<h2>4. 《CommonMark规范》叶块</h2>
 <p><a id="horizontal-rules"></a></p>
 <h3>4.1 水平线</h3>
@@ -120,9 +120,135 @@
         <td class="x">字符必须相同</td>
     </tr>
 </table>
-<h3>4.2 ATX headers</h3>
+<p><a id="atx-headers"></a></p>
+<h3>4.2 标题（ATX形式）</h3>
+<p>ATX形式用前后1~6个&quot;#&quot;将一行字符串进行包裹。<br>
+<code>###### foo ######</code><br>
+前部的1~6个&quot;#&quot;后面不能直接跟非空字符。允许前面加入1~3个空格。&quot;#&quot;的数量决定了标题的层级。<br>
+尾部的&quot;#&quot;是可选的，且数量不限。尾部&quot;#&quot;开头需要加入空格。\</p>
+<table>
+    <tr>
+        <th>CommonMark</th>
+        <th>HTML</th>
+        <th>说明</th>
+    </tr>
+    <tr>
+        <td>
+            # foo<br>
+            ## foo<br>
+            ### foo<br>
+            #### foo<br>
+            ##### foo<br>
+            ###### foo<br>
+        </td>
+        <td>
+            &lt;h1&gt;foo&lt;/h1&gt;<br>
+            &lt;h2&gt;foo&lt;/h2&gt;<br>
+            &lt;h3&gt;foo&lt;/h3&gt;<br>
+            &lt;h4&gt;foo&lt;/h4&gt;<br>
+            &lt;h5&gt;foo&lt;/h5&gt;<br>
+            &lt;h6&gt;foo&lt;/h6&gt;<br>
+        </td>
+        <td class="o">正确范例</td>
+    </tr>
+    <tr>
+        <td># foo *bar* \*baz\*</td>
+        <td>&lt;h1&gt;foo &lt;em&gt;bar&lt;/em&gt; *baz*&lt;/h1&gt;</td>
+        <td class="o">标题中的内容将被处理为一行</td>
+    </tr>
+    <tr>
+        <td>#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>&lt;h1&gt;foo&lt;/h1&gt;</td>
+        <td class="o">多余的空格会被忽略</td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;### foo<br>
+            &nbsp;&nbsp;## foo<br>
+            &nbsp;&nbsp;&nbsp;# foo
+        </td>
+        <td>
+            &lt;h3&gt;foo&lt;/h3&gt;<br>
+            &lt;h2&gt;foo&lt;/h2&gt;<br>
+            &lt;h1&gt;foo&lt;/h1&gt;
+        </td>
+        <td class="o">开头可以输入1~3个空格</td>
+    </tr>
+    <tr>
+        <td>
+            ## foo ##<br>
+            &nbsp;&nbsp;###&nbsp;&nbsp;&nbsp;bar&nbsp;&nbsp;&nbsp;&nbsp;###
+        </td>
+        <td>
+            &lt;h2&gt;foo&lt;/h2&gt;<br>
+            &lt;h3&gt;bar&lt;/h3&gt;
+        </td>
+        <td class="o">尾部的"#"是可选的</td>
+    </tr>
+    <tr>
+        <td>## foo #######</td>
+        <td>&lt;h1&gt;foo&lt;/h1&gt;</td>
+        <td class="o">首位"#"数量可以不一样</td>
+    </tr>
+    <tr>
+        <td>### foo ###&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>&lt;h3&gt;foo&lt;/h3&gt;</td>
+        <td class="o">后面多余的空格会被忽略</td>
+    </tr>
+    <tr>
+        <td>### foo ### b</td>
+        <td>&lt;h3&gt;foo ### b&lt;/h3&gt;</td>
+        <td class="o">"#"后面跟着非空白字符的，将被处理为标题内容，而不作为结束符</td>
+    </tr>
+    <tr>
+        <td>### foo \###</td>
+        <td>&lt;h3&gt;foo ###&lt;/h3&gt;</td>
+        <td class="o">"#"加了转义符，将被处理为标题内容</td>
+    </tr>
+    <tr>
+        <td>##</td>
+        <td>&lt;h2&gt;&lt;/h2&gt;</td>
+        <td class="o">标题内容可以为空</td>
+    </tr>
+    <tr>
+        <td>####### foo</td>
+        <td>&lt;p&gt;####### foo&lt;/p&gt;</td>
+        <td class="x">超过6个"#"不行</td>
+    </tr>
+    <tr>
+        <td>
+            #5 bolt<br>
+            #foobar
+        </td>
+        <td>
+            &lt;p&gt;#5 bolt&lt;/p&gt;<br>
+            &lt;p&gt;#foobar&lt;/p&gt;
+        </td>
+        <td class="x">在"#"和标题内容中间必须有至少一个空格</td>
+    </tr>
+    <tr>
+        <td>\## foo</td>
+        <td>&lt;p&gt;## foo&lt;/p&gt;</td>
+        <td class="x">第一个"#"被转义了，所以也不能形成标题</td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;# foo</td>
+        <td>&lt;pre&gt;&lt;code&gt;# foo<br>&lt;/code&gt;&lt;/pre&gt;</td>
+        <td class="x">开头超过3个空格不能形成标题</td>
+    </tr>
+    <tr>
+        <td>foo<br>&nbsp;&nbsp;&nbsp;&nbsp;# foo</td>
+        <td>&lt;p&gt;foo<br># bar&lt;/p&gt;</td>
+        <td class="x">开头超过3个空格不能形成标题</td>
+    </tr>
+    <tr>
+        <td># foo#</td>
+        <td>&lt;h1&gt;foo#&lt;/h1&gt;</td>
+        <td class="x">尾部"#"前必须要有空格</td>
+    </tr>
+</table>
 <p><a id="setext-headers"></a></p>
-<h3>4.3 Setext headers</h3>
+<h3>4.3 标题（Setext形式）</h3>
 <h3>4.4 Indented code blocks</h3>
 <h3>4.5 Fenced code blocks</h3>
 <h3>4.6 HTML blocks</h3>
@@ -151,26 +277,26 @@
     <link href="http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/"/>
     <id>http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/</id>
     <published>2015-08-04T09:36:51.000Z</published>
-    <updated>2015-08-04T10:39:54.000Z</updated>
-    <content type="html"><![CDATA[<h2>《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
+    <updated>2015-08-06T02:07:51.000Z</updated>
+    <content type="html"><![CDATA[<h2>3. 《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
 <p>我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等<strong>块级元素</strong>构件起来的。
 块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等<strong>内联元素</strong>。</p>
 <p><a id="precedence"></a></p>
-<h3>优先级</h3>
+<h3>3.1 优先级</h3>
 <p>块级结构标识总是优先于内联结构标识进行处理。比如：</p>
 <figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> <span class="string">`one</span><br><span class="line"></span></span>-<span class="ruby"><span class="string"> two`</span></span></span><br></pre></td></tr></table></figure>
 <p>表示的是一个列表中包含<code>`one</code>和<code>two`</code>两个元素，生成HTML后是：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>`one<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>two`<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>而不是一个包含了代码段的列表</p>
 <p><a id="container-blocks-and-leaf-blocks"></a></p>
-<h3>容器块、叶块</h3>
+<h3>3.2 容器块、叶块</h3>
 <p>块分为“容器块”和“叶块”，其中“容器块”可以包含其他块，而“叶块”不能包含其他块。后面会进行详细说明。</p>
 <h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2>《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
+    <![CDATA[<h2>3. 《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
 <p>我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等<strong>块级元素</strong>构件起来的。
-块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等）]]>
+块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子]]>
     </summary>
     
       <category term="CommonMark" scheme="http://philochou.github.io/tags/CommonMark/"/>
@@ -279,11 +405,11 @@
     <link href="http://philochou.github.io/2015/07/31/commonmark-preliminaries/"/>
     <id>http://philochou.github.io/2015/07/31/commonmark-preliminaries/</id>
     <published>2015-07-31T04:32:31.000Z</published>
-    <updated>2015-08-01T01:58:49.000Z</updated>
+    <updated>2015-08-06T02:08:27.000Z</updated>
     <content type="html"><![CDATA[<p><a id="preliminaries"></a></p>
-<h2>《CommonMark规范》预备知识</h2>
+<h2>2. 《CommonMark规范》预备知识</h2>
 <p><a id="characters-and-lines"></a></p>
-<h3>字符和行</h3>
+<h3>2.1 字符和行</h3>
 <p>任意数量组合的<a href="#character">字符</a>在CommonMark中都是合法的</p>
 <p><a id="character"></a></p>
 <p><a href="#character">字符</a>：Unicode字符。CommonMark中并不指定字符编码</p>
@@ -310,7 +436,7 @@
 <p><a id="punctuation-character"></a></p>
 <p><a href="#punctuation-character">标点符</a>：包含<a href="#ascii-punctuation-character">ASCII标点符</a>，及unicode中的以下分类：<a href="http://www.fileformat.info/info/unicode/category/Pc/list.htm" target="_blank" rel="external">Pc</a>、<a href="http://www.fileformat.info/info/unicode/category/Pd/list.htm" target="_blank" rel="external">Pd</a>、<a href="http://www.fileformat.info/info/unicode/category/Pe/list.htm" target="_blank" rel="external">Pe</a>、<a href="http://www.fileformat.info/info/unicode/category/Pf/list.htm" target="_blank" rel="external">Pf</a>、<a href="http://www.fileformat.info/info/unicode/category/Pi/list.htm" target="_blank" rel="external">Pi</a>、<a href="http://www.fileformat.info/info/unicode/category/Po/list.htm" target="_blank" rel="external">Po</a>、<a href="http://www.fileformat.info/info/unicode/category/Ps/list.htm" target="_blank" rel="external">Ps</a></p>
 <p><a id="tabs"></a></p>
-<h3>缩进</h3>
+<h3>2.2 缩进</h3>
 <p><strong>行中的制表符不再替换为空格。</strong></p>
 <p>根据上下文内容，如果缩进对文档结构很重要，制表符会进行处理，使其看起来像是由4个空格组成。</p>
 <blockquote>
@@ -377,16 +503,16 @@
     </tr>
 </table>
 <p><a id="insecure-characters"></a></p>
-<h3>非安全字符</h3>
+<h3>2.3 非安全字符</h3>
 <p>处于安全考虑，unicode字符（U+0000）必须用字符（U+FFFD）替换</p>
 <h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a id="preliminaries"></a></p>
-<h2>《CommonMark规范》预备知识</h2>
+<h2>2. 《CommonMark规范》预备知识</h2>
 <p><a id="characters-and-lines"></a></p>
-<h3>字符和行</h3>
-<p>任意数量组合的<a href="#cha]]>
+<h3>2.1 字符和行</h3>
+<p>任意数量组合的<a hre]]>
     </summary>
     
       <category term="CommonMark" scheme="http://philochou.github.io/tags/CommonMark/"/>
@@ -402,22 +528,22 @@
     <link href="http://philochou.github.io/2015/07/31/commonmark-introduction/"/>
     <id>http://philochou.github.io/2015/07/31/commonmark-introduction/</id>
     <published>2015-07-31T01:23:50.000Z</published>
-    <updated>2015-08-04T10:36:39.000Z</updated>
+    <updated>2015-08-06T02:07:19.000Z</updated>
     <content type="html"><![CDATA[<p><a id="intro"></a></p>
-<h2>《CommonMark规范》介绍</h2>
+<h2>1. 《CommonMark规范》介绍</h2>
 <p><a id="what-is-markdown"></a></p>
-<h3>Markdown是什么？</h3>
+<h3>1.1 Markdown是什么？</h3>
 <p>Markdown是一种用来书写结构化文档的纯文本格式，吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
 <p>它是由约翰·格鲁伯（John Gruber）在2004年开发出来的，同时Gruber使用Perl语言编写了第一个Markdown转HTML的工具，并迅速在网络流行起来。</p>
 <p>至2014年，互联网已经有各种不同编程语言实现的版本。其中一些扩展自Markdown语法并加入了其他的格式约定，比如：脚注、列表、表格等，还有一些实现不仅仅可以输出HTML，还可以输出其他格式，比如：LaTeX。</p>
 <p><a id="why-is-a-spec-needed"></a></p>
-<h3>为什么需要建立规范？</h3>
+<h3>1.2 为什么需要建立规范？</h3>
 <p>Bruber对Markdown语法的标准说明中，有些地方表述并不明确。下面是一些例子：</p>
 <p>(整理中……)</p>
 <p>因为缺乏规范，早期的实现者使用Markdown.pl工具解决这个问题，但这个工具不仅有一些Bug，而且在一些情况下会输出错误的结果。</p>
 <p>因为缺乏规范，出现了很多分支版本。导致一个用户在这个系统中书写的文档，到其他系统中就变了样。</p>
 <p><a id="about-commonmark"></a></p>
-<h3>关于CommonMark</h3>
+<h3>1.3 关于CommonMark</h3>
 <p>CommonMark主要让Markdown语法更明确。后面有很多例子的演示，这些例子都用Markdown和HTML进行对比说明。
 同时CommonMark还提供了一个测试工具<a href="https://github.com/jgm/CommonMark/blob/master/test/spec_tests.py" target="_blank" rel="external">spec_tests.py</a>对Markdown程序进行测试：</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python test/spec_tests.py --spec spec.txt --<span class="function"><span class="keyword">program</span></span> <span class="function"><span class="keyword">PROGRAM</span></span></span><br></pre></td></tr></table></figure>
@@ -425,10 +551,10 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p><a id="intro"></a></p>
-<h2>《CommonMark规范》介绍</h2>
+<h2>1. 《CommonMark规范》介绍</h2>
 <p><a id="what-is-markdown"></a></p>
-<h3>Markdown是什么？</h3>
-<p>Markdown是一种用来书写结构化文档的纯文本格式]]>
+<h3>1.1 Markdown是什么？</h3>
+<p>Markdown是一种用来书写结构化文]]>
     </summary>
     
       <category term="CommonMark" scheme="http://philochou.github.io/tags/CommonMark/"/>
@@ -444,7 +570,7 @@
     <link href="http://philochou.github.io/2015/07/30/commonmark-catalog/"/>
     <id>http://philochou.github.io/2015/07/30/commonmark-catalog/</id>
     <published>2015-07-30T13:36:38.000Z</published>
-    <updated>2015-08-05T01:38:11.000Z</updated>
+    <updated>2015-08-06T02:19:40.000Z</updated>
     <content type="html"><![CDATA[<h2>前言</h2>
 <p>这只是博主学习《CommonMark规范》的笔记，仅供参考。</p>
 <h2>《CommonMark规范》目录</h2>
@@ -463,8 +589,8 @@
 <h4>3.2 <a href="/2015/08/04/commonmark-blocks-and-inlines#container-blocks-and-leaf-blocks">容器块、叶块</a></h4>
 <h3>4. <a href="/2015/08/05/commonmark-leaf-blocks">叶块</a></h3>
 <h4>4.1 <a href="/2015/08/05/commonmark-leaf-blocks#horizontal-rules">水平线</a></h4>
-<h4>4.2 ATX头</h4>
-<h4>4.3 Setext头</h4>
+<h4>4.2 <a href="/2015/08/05/commonmark-leaf-blocks#atx-headers">标题（ATX形式）</a></h4>
+<h4>4.3 <a href="/2015/08/05/commonmark-leaf-blocks#setext-headers">标题（Setext形式）</a></h4>
 <h4>4.4 缩进代码块(Indented code blocks)</h4>
 <h4>4.5 栅栏代码块(Fenced code blocks)</h4>
 <h4>4.6 HTML</h4>

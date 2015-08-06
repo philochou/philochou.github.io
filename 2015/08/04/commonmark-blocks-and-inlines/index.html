@@ -11,37 +11,37 @@
     
 
     
-    <meta name="description" content="《CommonMark规范》块(Blocks)和内联(Inlines)
+    <meta name="description" content="3. 《CommonMark规范》块(Blocks)和内联(Inlines)
 我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等块级元素构件起来的。
 块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等内联元素。
 
-优先级
+3.1 优先级
 块级结构标识总是优先于内联结构标识进行处理。比如：
 12- `one- two`
-表示的是一个列表中包含`one和">
+表示的是一个列表中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《CommonMark规范》块和内联">
 <meta property="og:url" content="http://philochou.github.io/2015/08/04/commonmark-blocks-and-inlines/index.html">
 <meta property="og:site_name" content="Philo的技术博客">
-<meta property="og:description" content="《CommonMark规范》块(Blocks)和内联(Inlines)
+<meta property="og:description" content="3. 《CommonMark规范》块(Blocks)和内联(Inlines)
 我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等块级元素构件起来的。
 块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等内联元素。
 
-优先级
+3.1 优先级
 块级结构标识总是优先于内联结构标识进行处理。比如：
 12- `one- two`
-表示的是一个列表中包含`one和">
-<meta property="og:updated_time" content="2015-08-04T10:39:54.000Z">
+表示的是一个列表中">
+<meta property="og:updated_time" content="2015-08-06T02:07:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CommonMark规范》块和内联">
-<meta name="twitter:description" content="《CommonMark规范》块(Blocks)和内联(Inlines)
+<meta name="twitter:description" content="3. 《CommonMark规范》块(Blocks)和内联(Inlines)
 我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等块级元素构件起来的。
 块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等内联元素。
 
-优先级
+3.1 优先级
 块级结构标识总是优先于内联结构标识进行处理。比如：
 12- `one- two`
-表示的是一个列表中包含`one和">
+表示的是一个列表中">
 
     
     <link rel="alternative" href="/atom.xml" title="Philo的技术博客" type="application/atom+xml">
@@ -113,18 +113,18 @@
 </header>
 	<div class="article-content">
 		
-		<h2>《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
+		<h2>3. 《CommonMark规范》块(Blocks)和内联(Inlines)</h2>
 <p>我们可以把一个文档想象成由一些类似段落、列表、标题、代码段等<strong>块级元素</strong>构件起来的。
 块级元素可以包含子块（比如段落中包含的引用文字，列表中包含的子项等），也可以包含类似纯文字、链接、图片、代码等<strong>内联元素</strong>。</p>
 <p><a id="precedence"></a></p>
-<h3>优先级</h3>
+<h3>3.1 优先级</h3>
 <p>块级结构标识总是优先于内联结构标识进行处理。比如：</p>
 <figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby"> <span class="string">`one</span><br><span class="line"></span></span>-<span class="ruby"><span class="string"> two`</span></span></span><br></pre></td></tr></table></figure>
 <p>表示的是一个列表中包含<code>`one</code>和<code>two`</code>两个元素，生成HTML后是：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>`one<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>two`<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>而不是一个包含了代码段的列表</p>
 <p><a id="container-blocks-and-leaf-blocks"></a></p>
-<h3>容器块、叶块</h3>
+<h3>3.2 容器块、叶块</h3>
 <p>块分为“容器块”和“叶块”，其中“容器块”可以包含其他块，而“叶块”不能包含其他块。后面会进行详细说明。</p>
 <h2><a href="/2015/07/30/commonmark-catalog">返回《CommonMark规范》目录</a></h2>
   
@@ -193,7 +193,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">《CommonMark规范》块(Blocks)和内联(Inlines)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">容器块、叶块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">返回《CommonMark规范》目录</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">3. 《CommonMark规范》块(Blocks)和内联(Inlines)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">3.1 优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">3.2 容器块、叶块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">返回《CommonMark规范》目录</span></a></li></ol>
  
   </div>
 
