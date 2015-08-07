@@ -5,7 +5,7 @@
   <subtitle><![CDATA[技术、产品、前端、运营]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://philochou.github.io//"/>
-  <updated>2015-08-06T03:11:22.000Z</updated>
+  <updated>2015-08-07T02:20:19.000Z</updated>
   <id>http://philochou.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://philochou.github.io/2015/08/05/commonmark-leaf-blocks/"/>
     <id>http://philochou.github.io/2015/08/05/commonmark-leaf-blocks/</id>
     <published>2015-08-05T00:42:13.000Z</published>
-    <updated>2015-08-06T03:11:22.000Z</updated>
+    <updated>2015-08-07T02:20:19.000Z</updated>
     <content type="html"><![CDATA[<h2>4. 《CommonMark规范》叶块</h2>
 <p><a id="horizontal-rules"></a></p>
 <h3>4.1 水平线</h3>
@@ -42,10 +42,10 @@
     <tr>
         <td>***<br>---<br>___</td>
         <td>&lt;hr /&gt;<br>&lt;hr /&gt;<br>&lt;hr /&gt;</td>
-        <td class="o">正确</td>
+        <td class="o">常见范例</td>
     </tr>
     <tr>
-        <td>&nbsp;***<br>&nbsp;&nbsp;---<br>&nbsp;&nbsp;&nbsp;___</td>
+        <td>&nbsp;***<br>&nbsp;---<br>&nbsp;&nbsp;&nbsp;___</td>
         <td>&lt;hr /&gt;<br>&lt;hr /&gt;<br>&lt;hr /&gt;</td>
         <td class="o">前面0-3个空格是允许的</td>
     </tr>
@@ -149,7 +149,7 @@
             &lt;h5&gt;foo&lt;/h5&gt;<br>
             &lt;h6&gt;foo&lt;/h6&gt;<br>
         </td>
-        <td class="o">正确范例</td>
+        <td class="o">常见范例</td>
     </tr>
     <tr>
         <td># foo *bar* \*baz\*</td>
@@ -249,6 +249,103 @@
 </table>
 <p><a id="setext-headers"></a></p>
 <h3>4.3 标题（Setext形式）</h3>
+<p>Settext标题形式由两行组成，上面一行为标题内容（开头允许0~3个缩进），下面一行为<a href="#settext-header-underline">Settext标题下划线</a>（Setext header underline）。</p>
+<p><a id="settext-header-underline"></a></p>
+<p><a href="#settext-header-underline">Settext标题下划线</a>由连续的&quot;=&quot;或者&quot;-&quot;组成。开头允许0~3个缩进。其中&quot;=&quot;表示一级标题，&quot;-&quot;表示二级标题。</p>
+<table>
+    <tr>
+        <td>CommonMark</td>
+        <td>HTML</td>
+        <td>说明</td>
+    </tr>
+    <tr>
+        <td>
+            <p>Foo *bar*<br>=========</p>
+            <p>Foo *bar*</p>
+        </td>
+        <td>
+            &lt;h1&gt;Foo &lt;em&gt;bar&lt;/em&gt;&lt;/h1&gt;<br>
+            &lt;h2&gt;Foo &lt;em&gt;bar&lt;/em&gt;&lt;/h2&gt;
+        </td>
+        <td class="o">常见范例</td>
+    </tr>
+    <tr>
+        <td>
+            Foo<br>----------
+        </td>
+        <td>
+            &lt;h2&gt;Foo&lt;/h2&gt;
+        </td>
+        <td class="o">长度任意，但单个"-"会被判定为列表</td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;&nbsp;&nbsp;Foo<br>---
+        </td>
+        <td>
+            &lt;h2&gt;Foo&lt;/h2&gt;
+        </td>
+        <td class="o">开头允许0~3个缩进</td>
+    </tr>
+    <tr>
+        <td>
+            <p>Foo&nbsp;&nbsp;<br>---</p>
+            <p>Foo\<br>---</p>
+        </td>
+        <td>
+            <p>&lt;h2&gt;Foo&lt;/h2&gt;</p>
+            <p>&lt;h2&gt;Foo\&lt;/h2&gt;</p>
+        </td>
+        <td class="o">标题后面接空格不会被换行，及时后面加了"\"，也不会换行</td>
+    </tr>
+    <tr>
+        <td>`Foo<br>---<br>`</td>
+        <td>&lt;h2&gt;`Foo&lt;/h2&gt;<br>&lt;p&gt;`&lt;/p&gt;</td>
+        <td class="o">加了代码块标识"`"，仍然解析为标题</td>
+    </tr>
+    <tr>
+        <td>---<br>Foo<br>---</td>
+        <td>&lt;hr /&gt;<br>&lt;h2&gt;Foo&lt;/h2&gt;</td>
+        <td class="o">前后空行不是必须的</td>
+    </tr>
+    <tr>
+        <td>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Foo<br>---</p>
+            <p>Foo<br>&nbsp;&nbsp;&nbsp;&nbsp;---</p>
+        </td>
+        <td>
+            <p>&lt;pre&gt;&lt;code&gt;Foo<br>---</p>
+            <p>&lt;p&gt;Foo<br>---&lt;/p&gt;</p>
+        </td>
+        <td class="x">开头缩进数量太多</td>
+    </tr>
+    <tr>
+        <td>Foo<br>= =</td>
+        <td>&lt;p&gt;Foo<br>= =&lt;/p&gt;</td>
+        <td class="x">"="和"-"必须连续，中间不能有空格</td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt; Foo<br>---</p>
+            <p>- Foo<br>---</p>
+        </td>
+        <td>
+            <p>&lt;blockquote&gt;<br>&lt;p&gt;Foo&lt;/p&gt;<br>&lt;/blockquote&gt;</p>
+            <p>&lt;ul&gt;<br>&lt;li&gt;Foo&lt;/li&gt;<br>&lt;/ul&gt;</p>
+        </td>
+        <td class="x">列表或者引用标记，不会形成标题</td>
+    </tr>
+    <tr>
+        <td>Foo<br>Bar<br>---</td>
+        <td>&lt;p&gt;Foo<br>Bar&lt;/p&gt;<br>&lt;hr /&gt;</td>
+        <td class="x">放置在段落中，会被解析为水平线</td>
+    </tr>
+    <tr>
+        <td>====</td>
+        <td>&lt;p&gt;====&lt;/p&gt;</td>
+        <td class="x">标题内容不能为空</td>
+    </tr>
+</table>
 <h3>4.4 Indented code blocks</h3>
 <h3>4.5 Fenced code blocks</h3>
 <h3>4.6 HTML blocks</h3>
